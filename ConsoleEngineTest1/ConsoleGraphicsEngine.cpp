@@ -191,3 +191,22 @@ void ConsoleGraphicsEngine::setColor(int charColor, int backroundColor) {
 void ConsoleGraphicsEngine::setColor(int color1) {
 	color = color1;
 }
+
+void ConsoleGraphicsEngine::close() {
+	setFont(8, 16);
+
+	
+	window = GetStdHandle(STD_OUTPUT_HANDLE);
+	width = 160;
+	height = 30;
+
+
+
+	writeArea = { 0, 0, (short)(width - 1), (short)(height - 1) };
+
+
+
+	SetConsoleScreenBufferSize(window, { width, height });
+	SetConsoleWindowInfo(window, TRUE, &writeArea);
+
+}

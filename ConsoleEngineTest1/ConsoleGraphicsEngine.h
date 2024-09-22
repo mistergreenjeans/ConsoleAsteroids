@@ -170,6 +170,10 @@ public:
 	*/
 	void setColor(int color1);
 	
+	/*
+	*	returns your console to A readable size
+	*/
+	void close();
 };
 
 

@@ -323,6 +323,35 @@ int main()
 			}
 		}
 
+		if (p1.lives == 0) {
+			temp.setColor(BG_WHITE + FG_WHITE);
+
+			std::string gameover  = "0000000000000000000000000000000000000000000000000000000\n";
+						gameover += "0111110111110100010111110000000111110100010111110111110\n";
+						gameover += "0100000100010110110100000000000100010100010100000100010\n";
+						gameover += "0101110111110101010111110000000100010010100111110111110\n";
+						gameover += "0100010100010100010100000000000100010010100100000100100\n";
+						gameover += "0111110100010100010111110000000111110001000111110100010\n";
+						gameover += "0000000000000000000000000000000000000000000000000000000\n";
+			temp.drawString(SCREEN_WIDTH/2 - 27, SCREEN_HEIGHT / 2 - 4, gameover);
+
+			std::string restartR  = "0000000000000000000000000000000000000000000\n";
+						restartR += "0100111110010000000011111010000111110100010\n";
+						restartR += "0010100010100111110010001010000100010100010\n";
+						restartR += "0000111110000000000011111010000111110111110\n";
+						restartR += "0000100100000111110010000010000100010001000\n";
+						restartR += "0000100010000000000010000011110100010001000\n";
+						restartR += "0000000000000000000000000000000000000000000\n";
+			
+			temp.drawString(SCREEN_WIDTH / 2 - 21, SCREEN_HEIGHT / 2 + 5, restartR);
+			if (temp.keys['R']) {
+				p1.lives = 3;
+				rockList.clear();
+				score = 0;
+				scoreTenK = 0;
+			}
+		}
+
 		// draw player
 		p1.setColor(COLOR(BG_WHITE) + COLOR(FG_WHITE));
 		p1.draw(temp);
@@ -365,8 +394,11 @@ int main()
 		temp.clear(' ');			
 		
 	}
-	
-	
+	temp.setColor(BG_BLACK + FG_WHITE);
+	temp.clear(' ');
+	temp.render();
+	temp.close();
+	system("cls");
 }
 
 
