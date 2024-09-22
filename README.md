@@ -1,1 +1,1 @@
-Code uses windows specific functions, If you are not on a windows machine, the terminal may work incorrectly
+Code uses windows specific functions, If you are not on a windows machine, the console may work incorrectly
