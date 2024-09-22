@@ -2,12 +2,14 @@
 
 #include <iostream>
 #include "ConsoleGraphicsEngine.h"
+#include <unordered_map>
 #include <chrono>
 #include <vector>
 #include "Entity.h"
 #include "Asteroid.h"
 #include "Player.h"
 #include "Bullet.h"
+
 using namespace std;
 using namespace chrono;
 
@@ -79,87 +81,88 @@ int main()
 		  shipSprite += "0010100\n";
 		  shipSprite += "0100010\n";
 		  shipSprite += "0111110\n";
+	
+	std::unordered_map<int, std::string> intToSprite;
+	intToSprite[1]  = "0000000\n";
+	intToSprite[1] += "0111000\n";
+	intToSprite[1] += "0001000\n";
+	intToSprite[1] += "0001000\n";
+	intToSprite[1] += "0001000\n";
+	intToSprite[1] += "0111110\n";
+	intToSprite[1] += "0000000\n";
 
-	string oneSprite = "0000000\n";
-		  oneSprite += "0111000\n";
-		  oneSprite += "0001000\n";
-		  oneSprite += "0001000\n";
-		  oneSprite += "0001000\n";
-		  oneSprite += "0111110\n";
-		  oneSprite += "0000000\n";
+	intToSprite[2]  = "0000000\n";
+	intToSprite[2] += "0111110\n";
+	intToSprite[2] += "0000010\n";
+	intToSprite[2] += "0111110\n";
+	intToSprite[2] += "0100000\n";
+	intToSprite[2] += "0111110\n";
+	intToSprite[2] += "0000000\n";
 
-	string twoSprite = "0000000\n";
-		  twoSprite += "0111110\n";
-		  twoSprite += "0000010\n";
-		  twoSprite += "0111110\n";
-		  twoSprite += "0100000\n";
-		  twoSprite += "0111110\n";
-		  twoSprite += "0000000\n";
+	intToSprite[3]  = "0000000\n";
+	intToSprite[3] += "0111110\n";
+	intToSprite[3] += "0000010\n";
+	intToSprite[3] += "0111110\n";
+	intToSprite[3] += "0000010\n";
+	intToSprite[3] += "0111110\n";
+	intToSprite[3] += "0000000\n";
 
-	string threeSprite = "0000000\n";
-		  threeSprite += "0111110\n";
-		  threeSprite += "0000010\n";
-		  threeSprite += "0111110\n";
-		  threeSprite += "0000010\n";
-		  threeSprite += "0111110\n";
-		  threeSprite += "0000000\n";
+	intToSprite[4]  = "0000000\n";
+	intToSprite[4] += "0100010\n";
+	intToSprite[4] += "0100010\n";
+	intToSprite[4] += "0111110\n";
+	intToSprite[4] += "0000010\n";
+	intToSprite[4] += "0000010\n";
+	intToSprite[4] += "0000000\n";
 
-	string fourSprite = "0000000\n";
-		  fourSprite += "0100010\n";
-		  fourSprite += "0100010\n";
-		  fourSprite += "0111110\n";
-		  fourSprite += "0000010\n";
-		  fourSprite += "0000010\n";
-		  fourSprite += "0000000\n";
+	intToSprite[5]  = "0000000\n";
+	intToSprite[5] += "0111110\n";
+	intToSprite[5] += "0100000\n";
+	intToSprite[5] += "0111110\n";
+	intToSprite[5] += "0000010\n";
+	intToSprite[5] += "0111110\n";
+	intToSprite[5] += "0000000\n";
 
-	string fiveSprite = "0000000\n";
-	      fiveSprite += "0111110\n";
-		  fiveSprite += "0100000\n";
-		  fiveSprite += "0111110\n";
-		  fiveSprite += "0000010\n";
-		  fiveSprite += "0111110\n";
-		  fiveSprite += "0000000\n";
+	intToSprite[6]  = "0000000\n";
+	intToSprite[6] += "0111110\n";
+	intToSprite[6] += "0100000\n";
+	intToSprite[6] += "0111110\n";
+	intToSprite[6] += "0100010\n";
+	intToSprite[6] += "0111110\n";
+	intToSprite[6] += "0000000\n";
 
-	string sixSprite = "0000000\n";
-	      sixSprite += "0111110\n";
-		  sixSprite += "0100000\n";
-		  sixSprite += "0111110\n";
-		  sixSprite += "0100010\n";
-		  sixSprite += "0111110\n";
-		  sixSprite += "0000000\n";
+	intToSprite[7]  = "0000000\n";
+	intToSprite[7] += "0111110\n";
+	intToSprite[7] += "0000010\n";
+	intToSprite[7] += "0000010\n";
+	intToSprite[7] += "0000010\n";
+	intToSprite[7] += "0000010\n";
+	intToSprite[7] += "0000000\n";
 
-	string sevenSprite = "0000000\n";
-	      sevenSprite += "0111110\n";
-		  sevenSprite += "0000010\n";
-		  sevenSprite += "0000010\n";
-		  sevenSprite += "0000010\n";
-		  sevenSprite += "0000010\n";
-		  sevenSprite += "0000000\n";
+	intToSprite[8]  =  "0000000\n";
+	intToSprite[8] += "0111110\n";
+	intToSprite[8] += "0100010\n";
+	intToSprite[8] += "0111110\n";
+	intToSprite[8] += "0100010\n";
+	intToSprite[8] += "0111110\n";
+	intToSprite[8] += "0000000\n";
 
-	string eightSprite = "0000000\n";
-		  eightSprite += "0111110\n";
-		  eightSprite += "0100010\n";
-		  eightSprite += "0111110\n";
-		  eightSprite += "0100010\n";
-		  eightSprite += "0111110\n";
-		  eightSprite += "0000000\n";
-
-	string nineSprite = "0000000\n";
-	      nineSprite += "0111110\n";
-		  nineSprite += "0100010\n";
-		  nineSprite += "0111110\n";
-		  nineSprite += "0000010\n";
-		  nineSprite += "0000010\n";
-		  nineSprite += "0000000\n";
+	intToSprite[9]  = "0000000\n";
+	intToSprite[9] += "0111110\n";
+	intToSprite[9] += "0100010\n";
+	intToSprite[9] += "0111110\n";
+	intToSprite[9] += "0000010\n";
+	intToSprite[9] += "0000010\n";
+	intToSprite[9] += "0000000\n";
 
 
-	string zeroSprite = "0000000\n";
-	      zeroSprite += "0111110\n";
-		  zeroSprite += "0100110\n";
-		  zeroSprite += "0101010\n";
-		  zeroSprite += "0110010\n";
-		  zeroSprite += "0111110\n";
-		  zeroSprite += "0000000\n";
+	intToSprite[0]  = "0000000\n";
+	intToSprite[0] += "0111110\n";
+	intToSprite[0] += "0100110\n";
+	intToSprite[0] += "0101010\n";
+	intToSprite[0] += "0110010\n";
+	intToSprite[0] += "0111110\n";
+	intToSprite[0] += "0000000\n";
 
 	const int SCREEN_HEIGHT = 250;
 	const int SCREEN_WIDTH = 300;
@@ -350,36 +353,7 @@ int main()
 		int scoreXPosition=34;
 		// iterate through vector of integers and draw each one as a sprite
 		for (int i = scoreDraw.size()-1; i >=0; i--) {
-			if (scoreDraw.at(i) == 1) {
-				temp.drawString(scoreXPosition, 1, oneSprite);
-			}
-			else if (scoreDraw.at(i) == 2) {
-				temp.drawString(scoreXPosition, 1, twoSprite);
-			}
-			else if (scoreDraw.at(i) == 3) {
-				temp.drawString(scoreXPosition, 1, threeSprite);
-			}
-			else if (scoreDraw.at(i) == 4) {
-				temp.drawString(scoreXPosition, 1, fourSprite);
-			}
-			else if (scoreDraw.at(i) == 5) {
-				temp.drawString(scoreXPosition, 1, fiveSprite);
-			}
-			else if (scoreDraw.at(i) == 6) {
-				temp.drawString(scoreXPosition, 1, sixSprite);
-			}
-			else if (scoreDraw.at(i) == 7) {
-				temp.drawString(scoreXPosition, 1, sevenSprite);
-			}
-			else if (scoreDraw.at(i) == 8) {
-				temp.drawString(scoreXPosition, 1, eightSprite);
-			}
-			else if (scoreDraw.at(i) == 9) {
-				temp.drawString(scoreXPosition, 1, nineSprite);
-			}
-			else if (scoreDraw.at(i) == 0) {
-				temp.drawString(scoreXPosition, 1, zeroSprite);
-			}
+			temp.drawString(scoreXPosition, 1, intToSprite[scoreDraw.at(i)]);
 			scoreXPosition += 6;
 		}
 
